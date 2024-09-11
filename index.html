@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9397b755d0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <table>
+      <tr>
+        <td colspan="3"><input class="input" type="text" placeholder="" /></td>
+        <td><button onclick="clean()">c</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="dis('7')">7</button></td>
+        <td><button onclick="dis('8')">8</button></td>
+        <td><button onclick="dis('9')">9</button></td>
+        <td><button onclick="dis('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="dis('4')">4</button></td>
+        <td><button onclick="dis('5')">5</button></td>
+        <td><button onclick="dis('6')">6</button></td>
+        <td><button onclick="dis('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="dis('1')">1</button></td>
+        <td><button onclick="dis('2')">2</button></td>
+        <td><button onclick="dis('3')">3</button></td>
+        <td><button onclick="dis('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="dis('0')">0</button></td>
+        <td><button onclick="dis('.')">.</button></td>
+        <td><button onclick="solve()">=</button></td>
+        <td><button onclick="dis('/')">/</button></td>
+      </tr>
+    </table>
+    <script>
+      function dis(x) {
+        if(document.getElementsByClassName("input")[0].value == 0){
+        document.getElementsByClassName("input")[0].value = "";
+        document.getElementsByClassName("input")[0].value = x;
+        }
+        else{
+            document.getElementsByClassName("input")[0].value += x;
+        }
+      }
+      function solve() {
+        var x = document.getElementsByClassName("input")[0].value;
+        var y = eval(x);
+        document.getElementsByClassName("input")[0].value = y;
+      }
+      function clean() {
+        document.getElementsByClassName("input")[0].value = 0;
+      }
+    </script>
+  </body>
+</html>
